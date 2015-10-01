@@ -1,0 +1,61 @@
+<h1>Listing rectangles</h1>
+ 
+ <%= link_to 'New rectangle', new_rectangle_path %>
+
+<table>
+  <tr>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Color</th>
+    
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @rectangles.each do |rectangle| %>
+    <tr>
+      <td><%= rectangle.width %></td>
+      <td><%= rectangle.height %></td>
+      <td><%= rectangle.color %></td>
+      <!-- <div id="rectangle"></div> -->
+      <!-- <div id="rectangle" style="width:number px; height:number px; background-color:blue"></div> -->
+      <td><%= link_to 'Show', rectangle_path(rectangle) %></td>
+      <td><%= link_to 'Edit', edit_rectangle_path(rectangle) %></td>
+      <td><%= link_to 'Destroy', rectangle_path(rectangle),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    </tr>
+    <!-- <div style="BACKGROUND-COLOR: #rectangle.color; HEIGHT: rectangle.height px; POSITION: absolute;  WIDTH: rectangle.width px"></div> -->
+    <!-- <canvas id="myCanvas" width="200" height="100"></canvas>  -->
+
+    <!-- <div style="BACKGROUND-COLOR: #ff0000;  HEIGHT: 100px; LEFT: 101px; POSITION: absolute; TOP: 65px; WIDTH: 200px"></div>
+ -->
+
+    <!-- <rect id=rectangle width='100' height='300' fill='red'/> -->
+    <!-- <div id="rectangle" style="width:100 px; height:300 px; background-color:blue"></div> -->
+    </tr>
+  <% end %>
+</table>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+    <script>
+    //int i = 0; //counter of rectangles
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    ctx.fillStyle = "red";
+    ctx.fillRect(10, 10,100.1,50.5);
+    //i = i + 1;//increment
+  </script>
+
+</body>
+</html>
+<!-- <div style="BACKGROUND-COLOR: #ff0000;  HEIGHT: 100px; LEFT: 101px; POSITION: absolute; TOP: 65px; WIDTH: 200px"></div>
+ -->

@@ -1,0 +1,17 @@
+<p>
+  <strong>Width:</strong>
+  <%= @rectangle.width %>
+</p>
+ 
+<p>
+  <strong>Height:</strong>
+  <%= @rectangle.height %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @rectangle.color %>
+</p>
+
+<%= link_to 'Edit', edit_rectangle_path(@rectangle) %> |
+<%= link_to 'Back', rectangles_path %>

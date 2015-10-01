@@ -1,0 +1,39 @@
+<h1>Editing rectangle</h1>
+ 
+<%= form_for :rectangle, url: rectangle_path(@rectangle), method: :patch do |f| %>
+ 
+  <% if @rectangle.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@rectangle.errors.count, "error") %> prohibited
+        this rectangle from being saved:
+      </h2>
+      <ul>
+        <% @rectangle.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :width %><br>
+    <%= f.text_field :width %>
+  </p>
+ 
+ <p>
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </p>
+  <p>
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', rectangles_path %>
