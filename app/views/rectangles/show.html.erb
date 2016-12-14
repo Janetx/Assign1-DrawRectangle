@@ -13,5 +13,13 @@
   <%= @rectangle.color %>
 </p>
 
+<!-- <div id="rectangle" ></div> 
+ <div width= "<%= @rectangle.width %> px" ></div> 
+ <div height= "<%= @rectangle.height %> px" ></div> 
+ <div color= "<%= @rectangle.color %>" ></div> -->
+
+<rect id="rectangle" fill="<%= @rectangle.color %>" height="<%= @rectangle.height %>"width="<%= @rectangle.width %>"></div>
+ 
+	
 <%= link_to 'Edit', edit_rectangle_path(@rectangle) %> |
 <%= link_to 'Back', rectangles_path %>
